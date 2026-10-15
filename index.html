@@ -1025,7 +1025,7 @@
       }
     }
 
-    async function downloadTiktok() {
+    function downloadTiktok() {
       const url = document.getElementById('tiktokQuery').value.trim();
       if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
 
@@ -1039,28 +1039,19 @@
       loader.style.display = 'block';
       resultBox.style.display = 'none';
 
-      // Hubungkan langsung ke endpoint Railway yang memicu yt-dlp backend
+      // Langsung arahkan sumber ke endpoint backend Railway secara instan tanpa fetch head
       const finalDownloadUrl = `${api('/api/download/tiktok')}?url=${encodeURIComponent(url)}`;
       
-      try {
-        // Cek koneksi ke backend lewat head request/fetch agar request langsung masuk ke log Railway
-        const checkRes = await fetch(finalDownloadUrl, { method: 'HEAD' });
-        if (!checkRes.ok && checkRes.status !== 200) {
-          throw new Error('Gagal memproses link TikTok di server.');
-        }
+      videoPreview.src = finalDownloadUrl;
+      downloadBtn.href = finalDownloadUrl;
 
-        videoPreview.src = finalDownloadUrl;
-        downloadBtn.href = finalDownloadUrl;
-
+      // Berikan waktu tunggu 2 detik agar backend Railway sempat memproses yt-dlp, lalu tampilkan hasil
+      setTimeout(() => {
         loader.style.display = 'none';
         resultBox.style.display = 'flex';
-        videoPreview.load();
-      } catch (err) {
-        alert('Terjadi kesalahan: ' + err.message);
-        loader.style.display = 'none';
-      } finally {
         btn.disabled = false;
-      }
+        videoPreview.load();
+      }, 2000);
     }
   </script>
 </body>
