@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gilangranggaid - Downloader MP3 Musik Gratis</title>
+  <title>gilangranggaid - Downloader Musik & TikTok Gratis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
       overflow-x: hidden;
     }
 
-    /* TOP ANNOUNCEMENT BANNER - SANGAT MENCOLOK */
+    /* TOP ANNOUNCEMENT BANNER */
     .hero-signature-marquee {
       background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b, #10b981, #3b82f6, #7c3aed);
       background-size: 300% 300%;
@@ -183,7 +183,7 @@
       padding: 0 1.5rem;
     }
 
-    /* THEME HERO BANNER */
+    /* HERO BANNER */
     .hero-banner {
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.95));
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -242,84 +242,7 @@
       max-width: 560px;
     }
 
-    /* VINYL & EQUALIZER VISUAL */
-    .hero-visual {
-      position: relative;
-      width: 160px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      z-index: 2;
-    }
-
-    .vinyl-disc {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #0b0f19 32%, #1e293b 33%, #0b0f19 50%, #334155 51%, #0b0f19 70%, #1e293b 71%, #0f172a 100%);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.35);
-      position: relative;
-      animation: spinVinyl 10s linear infinite;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 3px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .vinyl-label {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ec4899, #38bdf8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
-      border: 3px solid #0b0f19;
-    }
-
-    .equalizer-wave {
-      position: absolute;
-      bottom: -8px;
-      display: flex;
-      gap: 4px;
-      align-items: flex-end;
-      height: 32px;
-      z-index: 3;
-      background: rgba(15, 23, 42, 0.9);
-      padding: 4px 8px;
-      border-radius: 8px;
-      border: 1px solid var(--card-border);
-    }
-
-    .eq-bar {
-      width: 4px;
-      background: linear-gradient(to top, #38bdf8, #ec4899);
-      border-radius: 2px;
-      animation: bounceEq 1s ease-in-out infinite alternate;
-    }
-
-    .eq-bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
-    .eq-bar:nth-child(2) { height: 22px; animation-delay: 0.3s; }
-    .eq-bar:nth-child(3) { height: 28px; animation-delay: 0.15s; }
-    .eq-bar:nth-child(4) { height: 16px; animation-delay: 0.4s; }
-    .eq-bar:nth-child(5) { height: 26px; animation-delay: 0.25s; }
-    .eq-bar:nth-child(6) { height: 12px; animation-delay: 0.5s; }
-
-    @keyframes spinVinyl {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes bounceEq {
-      0% { height: 6px; }
-      100% { height: 28px; }
-    }
-
-    /* SEARCH + LARGE GUIDE NOTICE */
+    /* SEARCH + GUIDE */
     .search-guide-row {
       display: flex;
       flex-direction: column;
@@ -335,14 +258,14 @@
 
     .guide-notice {
       width: 100%;
-      min-height: 45vh;
-      padding: clamp(2rem, 6vw, 5rem);
+      min-height: 35vh;
+      padding: clamp(2rem, 6vw, 4rem);
       border: 3px solid rgba(251, 191, 36, 0.85);
       border-radius: 1.5rem;
       background: linear-gradient(135deg, rgba(120, 53, 15, 0.82), rgba(30, 41, 59, 0.98));
       box-shadow: 0 0 35px rgba(251, 191, 36, 0.24);
       color: #fff;
-      font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
       line-height: 1.5;
       display: flex;
       flex-direction: column;
@@ -354,7 +277,7 @@
     .guide-notice-title {
       margin-bottom: 0.5rem;
       color: #fcd34d;
-      font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       line-height: 1.15;
       font-weight: 900;
       letter-spacing: 0.025em;
@@ -601,6 +524,29 @@
       transform: translateY(-1px);
     }
 
+    /* TIKTOK SECTION RESULT */
+    .tiktok-result-box {
+      margin-top: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .tiktok-video-preview {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 1rem;
+      outline: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
     /* FLOATING MUSIC PLAYER */
     .player-bar {
       position: fixed;
@@ -664,93 +610,6 @@
       width: 100%;
       height: 36px;
       outline: none;
-    }
-
-    /* TIKTOK CARD */
-    .tiktok-card {
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: 1.5rem;
-      padding: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    }
-
-    .tiktok-header {
-      display: flex;
-      gap: 1.25rem;
-      align-items: center;
-    }
-
-    .tiktok-thumb {
-      width: 95px;
-      height: 125px;
-      border-radius: 0.85rem;
-      object-fit: cover;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-      border: 2px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .tiktok-author {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #f8fafc;
-      margin-bottom: 0.5rem;
-    }
-
-    .tiktok-desc {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      line-height: 1.5;
-    }
-
-    .tiktok-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-tt-video {
-      background: linear-gradient(135deg, #ec4899, #db2777);
-      color: white;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.85rem;
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
-      transition: all 0.2s;
-    }
-
-    .btn-tt-video:hover {
-      background: linear-gradient(135deg, #db2777, #be185d);
-      transform: translateY(-2px);
-    }
-
-    .btn-tt-audio {
-      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-      color: white;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.85rem;
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
-      transition: all 0.2s;
-    }
-
-    .btn-tt-audio:hover {
-      background: linear-gradient(135deg, #7c3aed, #6d28d9);
-      transform: translateY(-2px);
     }
 
     /* STATES */
@@ -841,14 +700,6 @@
       .hero-desc {
         margin: 0 auto;
       }
-      .hero-visual {
-        width: 120px;
-        height: 120px;
-      }
-      .vinyl-disc {
-        width: 110px;
-        height: 110px;
-      }
       .song-card {
         flex-direction: column;
         align-items: flex-start;
@@ -897,8 +748,11 @@
       <div class="brand-title">gilang<span>ranggaid</span></div>
     </a>
     <div class="tabs">
-      <button class="tab-btn active" id="tabSongBtn" type="button">
+      <button class="tab-btn active" id="tabSongBtn" onclick="switchTab('song')" type="button">
         <span>🎵 Cari Lagu MP3</span>
+      </button>
+      <button class="tab-btn" id="tabTiktokBtn" onclick="switchTab('tiktok')" type="button">
+        <span>📥 Download TikTok</span>
       </button>
     </div>
   </header>
@@ -907,27 +761,13 @@
     <!-- THEME HERO BANNER -->
     <div class="hero-banner">
       <div class="hero-content">
-        <div class="badge-welcome">✨ Next-Gen Music Downloader</div>
+        <div class="badge-welcome">✨ Next-Gen Multi Downloader</div>
         <h1 class="hero-title">
-          Portal Musik <span class="brand-highlight">gilangranggaid</span>
+          Portal Media <span class="brand-highlight">gilangranggaid</span>
         </h1>
         <p class="hero-desc">
-          Cari judul lagu apa saja, nikmati 10 list hasil teratas, putar preview secara instan, dan unduh format MP3 jernih langsung ke perangkatmu tanpa ribet iklan!
+          Cari lagu favorit atau unduh video TikTok favoritmu dengan mudah, cepat, jernih, dan tanpa iklan!
         </p>
-      </div>
-
-      <div class="hero-visual">
-        <div class="vinyl-disc">
-          <div class="vinyl-label">🎶</div>
-        </div>
-        <div class="equalizer-wave">
-          <div class="eq-bar"></div>
-          <div class="eq-bar"></div>
-          <div class="eq-bar"></div>
-          <div class="eq-bar"></div>
-          <div class="eq-bar"></div>
-          <div class="eq-bar"></div>
-        </div>
       </div>
     </div>
 
@@ -941,7 +781,7 @@
               type="text" 
               id="songQuery" 
               class="search-input" 
-              placeholder="Ketik judul lagu atau nama artis (cth: Komang - Raim Laode, APT Rose, Sialan)..." 
+              placeholder="Ketik judul lagu atau nama artis (cth: Komang, APT Rose)..." 
               onkeypress="if(event.key==='Enter') searchSongs()"
             >
             <button class="btn-submit" id="btnSearch" onclick="searchSongs()">
@@ -953,7 +793,6 @@
           <div class="guide-notice-title">📢 PANDUAN SEBELUM MENDOWNLOAD LAGU !!!</div>
           <p class="guide-notice-warning">⚠️ WAJIB BACA PANDUAN INI SEBELUM DOWNLOAD!</p>
           <p>Putar lagu terlebih dahulu. Pastikan lagu <strong>bisa diputar sampai keluar suara</strong>, baru tekan <strong>DOWNLOAD MP3</strong>.</p>
-          <p class="guide-notice-warning">Kalau lagu tidak bisa diputar sampai keluar suara, lagu itu tidak akan bisa didownload!</p>
         </aside>
       </div>
 
@@ -966,14 +805,51 @@
         <div class="song-list-title">
           <span>🎧 10 Hasil Lagu Ditemukan</span>
         </div>
-        <span style="font-size:0.85rem; color:#94a3b8;">Putar dulu preview atau langsung unduh MP3</span>
       </div>
 
       <div class="song-list" id="songResults"></div>
       
       <div class="empty-state" id="songEmpty">
         <div class="empty-icon">🎼</div>
-        <p>Belum ada pencarian. Ketik judul lagu favoritmu di atas untuk menampilkan 10 rekomendasi lagu!</p>
+        <p>Belum ada pencarian. Ketik judul lagu favoritmu di atas untuk menampilkan rekomendasi!</p>
+      </div>
+    </div>
+
+    <!-- TAB 2: VIEW TIKTOK -->
+    <div id="viewTiktok" style="display: none;">
+      <div class="search-guide-row">
+        <div class="search-wrapper">
+          <div class="search-box">
+            <div class="search-icon-inside">🔗</div>
+            <input 
+              type="text" 
+              id="tiktokQuery" 
+              class="search-input" 
+              placeholder="Tempel tautan video TikTok di sini (tinggal paste/tempel)..." 
+              onkeypress="if(event.key==='Enter') downloadTiktok()"
+            >
+            <button class="btn-submit" id="btnTiktok" onclick="downloadTiktok()">
+              <span>Proses Video</span>
+            </button>
+          </div>
+        </div>
+        <aside class="guide-notice" aria-label="Panduan download TikTok">
+          <div class="guide-notice-title">🎬 DOWNLOAD VIDEO TIKTOK TANPA WATERMARK!</div>
+          <p>Cukup <strong>salin tautan (link) video TikTok</strong>, lalu <strong>tempel (paste)</strong> di kolom atas dan klik <strong>Proses Video</strong>!</p>
+        </aside>
+      </div>
+
+      <div class="loading-spinner" id="tiktokLoading">
+        <div class="spinner-ring"></div>
+        <p>Sedang memproses video TikTok dari server... ⏳</p>
+      </div>
+
+      <div class="tiktok-result-box" id="tiktokResultBox">
+        <h3 style="color: #38bdf8;">🎉 Video TikTok Berhasil Diproses!</h3>
+        <video id="tiktokVideoPreview" class="tiktok-video-preview" controls></video>
+        <a id="btnDownloadTiktok" class="btn-download" href="#" download>
+          <span>⬇️ Unduh Video TikTok MP4</span>
+        </a>
       </div>
     </div>
 
@@ -1002,7 +878,6 @@
   </footer>
 
   <script>
-    // Konfigurasi endpoint backend (Railway / Local)
     const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
       ? ''
       : 'https://laguu-production.up.railway.app';
@@ -1012,6 +887,25 @@
     }
 
     let currentPlayingUrl = null;
+
+    function switchTab(tab) {
+      const viewSong = document.getElementById('viewSong');
+      const viewTiktok = document.getElementById('viewTiktok');
+      const tabSongBtn = document.getElementById('tabSongBtn');
+      const tabTiktokBtn = document.getElementById('tabTiktokBtn');
+
+      if (tab === 'song') {
+        viewSong.style.display = 'block';
+        viewTiktok.style.display = 'none';
+        tabSongBtn.classList.add('active');
+        tabTiktokBtn.classList.remove('active');
+      } else {
+        viewSong.style.display = 'none';
+        viewTiktok.style.display = 'block';
+        tabTiktokBtn.classList.add('active');
+        tabSongBtn.classList.remove('active');
+      }
+    }
 
     function downloadMp3(url, title) {
       const downloadUrl = `${api('/api/download/song')}?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
@@ -1023,7 +917,6 @@
       const bar = document.getElementById('playerBar');
       const btn = document.getElementById(btnId);
 
-      // Reset all other play buttons
       document.querySelectorAll('.btn-play').forEach(b => {
         b.innerHTML = '<span>▶️ Putar</span>';
         b.classList.remove('playing');
@@ -1045,9 +938,7 @@
       audio.pause();
       audio.src = `${api('/api/play/song')}?url=${encodeURIComponent(url)}`;
       audio.load();
-      audio.play().catch(e => {
-        console.log('Play info:', e);
-      });
+      audio.play().catch(e => { console.log('Play info:', e); });
 
       btn.innerHTML = '<span>⏸️ Stop</span>';
       btn.classList.add('playing');
@@ -1057,20 +948,14 @@
         btn.classList.remove('playing');
         currentPlayingUrl = null;
       };
-
       audio.onpause = () => {
         btn.innerHTML = '<span>▶️ Putar</span>';
         btn.classList.remove('playing');
       };
-
       audio.onplay = () => {
         btn.innerHTML = '<span>⏸️ Stop</span>';
         btn.classList.add('playing');
       };
-    }
-
-    function showGuide() {
-      alert('PANDUAN DOWNLOAD MP3\n\n1. Cari lagu yang kamu inginkan.\n2. Tekan tombol Putar dan pastikan preview lagunya bisa diputar sampai keluar suara.\n3. Kalau lagu bisa diputar, tekan tombol Download MP3 pada lagu tersebut.');
     }
 
     async function searchSongs() {
@@ -1140,6 +1025,33 @@
       }
     }
 
+    function downloadTiktok() {
+      const url = document.getElementById('tiktokQuery').value.trim();
+      if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
+
+      const btn = document.getElementById('btnTiktok');
+      const loader = document.getElementById('tiktokLoading');
+      const resultBox = document.getElementById('tiktokResultBox');
+      const videoPreview = document.getElementById('tiktokVideoPreview');
+      const downloadBtn = document.getElementById('btnDownloadTiktok');
+
+      btn.disabled = true;
+      loader.style.display = 'block';
+      resultBox.style.display = 'none';
+
+      const finalDownloadUrl = `${api('/api/download/tiktok')}?url=${encodeURIComponent(url)}`;
+      
+      // Set preview & download link langsung
+      videoPreview.src = finalDownloadUrl;
+      downloadBtn.href = finalDownloadUrl;
+
+      // Simulasi load sebentar lalu tampilkan hasil
+      setTimeout(() => {
+        loader.style.display = 'none';
+        resultBox.style.display = 'flex';
+        btn.disabled = false;
+      }, 1500);
+    }
   </script>
 </body>
 </html>
