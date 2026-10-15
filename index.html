@@ -847,7 +847,7 @@
       <div class="tiktok-result-box" id="tiktokResultBox">
         <h3 style="color: #38bdf8;">🎉 Video TikTok Berhasil Diproses!</h3>
         <video id="tiktokVideoPreview" class="tiktok-video-preview" controls></video>
-        <a id="btnDownloadTiktok" class="btn-download" href="#" download>
+        <a id="btnDownloadTiktok" class="btn-download" href="#" target="_blank" download>
           <span>⬇️ Unduh Video TikTok MP4</span>
         </a>
       </div>
@@ -1025,44 +1025,7 @@
       }
     }
 
-    // FUNGSI TIKTOK MANDIRI DENGAN SAFENESS WRAPPER
-    function downloadTiktok() {
-      try {
-        const input = document.getElementById('tiktokQuery');
-        if (!input) return alert('Elemen input tidak ditemukan!');
-        
-        const url = input.value.trim();
-        if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
-
-        const btn = document.getElementById('btnTiktok');
-        const loader = document.getElementById('tiktokLoading');
-        const resultBox = document.getElementById('tiktokResultBox');
-        const videoPreview = document.getElementById('tiktokVideoPreview');
-        const downloadBtn = document.getElementById('btnDownloadTiktok');
-
-        if (btn) btn.disabled = true;
-        if (loader) loader.style.display = 'block';
-        if (resultBox) resultBox.style.display = 'none';
-
-        const serverBase = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-          ? ''
-          : 'https://laguu-production.up.railway.app';
-          
-        const finalDownloadUrl = serverBase + '/api/download/tiktok?url=' + encodeURIComponent(url);
-
-        if (videoPreview) videoPreview.src = finalDownloadUrl;
-        if (downloadBtn) downloadBtn.href = finalDownloadUrl;
-
-        setTimeout(() => {
-          if (loader) loader.style.display = 'none';
-          if (resultBox) resultBox.style.display = 'flex';
-          if (btn) btn.disabled = false;
-          if (videoPreview) videoPreview.load();
-        }, 2000);
-      } catch (e) {
-        alert('Terjadi kesalahan script: ' + e.message);
-      }
-    }
-  </script>
-</body>
-</html>
+    // FUNGSI TIKTOK LANGSUNG MENGGUNAKAN API TIKWM
+    async function downloadTiktok() {
+      const urlInput = document.getElementById('tiktokQuery');
+      const url = urlInput ? urlInput.value.trim() :
