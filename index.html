@@ -828,7 +828,7 @@
               placeholder="Tempel tautan video TikTok di sini (tinggal paste/tempel)..." 
               onkeypress="if(event.key==='Enter') downloadTiktok()"
             >
-            <button class="btn-submit" id="btnTiktok" onclick="downloadTiktok()" type="button">
+            <button class="btn-submit" id="btnTiktok" onclick="downloadTiktok()">
               <span>Proses Video</span>
             </button>
           </div>
@@ -1025,43 +1025,33 @@
       }
     }
 
-    // FUNGSI TIKTOK MANDIRI DENGAN SAFENESS WRAPPER
     function downloadTiktok() {
-      try {
-        const input = document.getElementById('tiktokQuery');
-        if (!input) return alert('Elemen input tidak ditemukan!');
-        
-        const url = input.value.trim();
-        if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
+      const url = document.getElementById('tiktokQuery').value.trim();
+      if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
 
-        const btn = document.getElementById('btnTiktok');
-        const loader = document.getElementById('tiktokLoading');
-        const resultBox = document.getElementById('tiktokResultBox');
-        const videoPreview = document.getElementById('tiktokVideoPreview');
-        const downloadBtn = document.getElementById('btnDownloadTiktok');
+      const btn = document.getElementById('btnTiktok');
+      const loader = document.getElementById('tiktokLoading');
+      const resultBox = document.getElementById('tiktokResultBox');
+      const videoPreview = document.getElementById('tiktokVideoPreview');
+      const downloadBtn = document.getElementById('btnDownloadTiktok');
 
-        if (btn) btn.disabled = true;
-        if (loader) loader.style.display = 'block';
-        if (resultBox) resultBox.style.display = 'none';
+      btn.disabled = true;
+      loader.style.display = 'block';
+      resultBox.style.display = 'none';
 
-        const serverBase = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-          ? ''
-          : 'https://laguu-production.up.railway.app';
-          
-        const finalDownloadUrl = serverBase + '/api/download/tiktok?url=' + encodeURIComponent(url);
+      // Langsung arahkan sumber ke endpoint backend Railway secara instan tanpa fetch head
+      const finalDownloadUrl = `${api('/api/download/tiktok')}?url=${encodeURIComponent(url)}`;
+      
+      videoPreview.src = finalDownloadUrl;
+      downloadBtn.href = finalDownloadUrl;
 
-        if (videoPreview) videoPreview.src = finalDownloadUrl;
-        if (downloadBtn) downloadBtn.href = finalDownloadUrl;
-
-        setTimeout(() => {
-          if (loader) loader.style.display = 'none';
-          if (resultBox) resultBox.style.display = 'flex';
-          if (btn) btn.disabled = false;
-          if (videoPreview) videoPreview.load();
-        }, 2000);
-      } catch (e) {
-        alert('Terjadi kesalahan script: ' + e.message);
-      }
+      // Berikan waktu tunggu 2 detik agar backend Railway sempat memproses yt-dlp, lalu tampilkan hasil
+      setTimeout(() => {
+        loader.style.display = 'none';
+        resultBox.style.display = 'flex';
+        btn.disabled = false;
+        videoPreview.load();
+      }, 2000);
     }
   </script>
 </body>
