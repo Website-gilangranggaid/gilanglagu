@@ -1025,7 +1025,7 @@
       }
     }
 
-    function downloadTiktok() {
+    async function downloadTiktok() {
       const url = document.getElementById('tiktokQuery').value.trim();
       if (!url) return alert('Silakan tempel (paste) tautan video TikTok terlebih dahulu!');
 
@@ -1039,20 +1039,14 @@
       loader.style.display = 'block';
       resultBox.style.display = 'none';
 
-      // Langsung arahkan sumber ke endpoint backend Railway secara instan tanpa fetch head
       const finalDownloadUrl = `${api('/api/download/tiktok')}?url=${encodeURIComponent(url)}`;
       
-      videoPreview.src = finalDownloadUrl;
-      downloadBtn.href = finalDownloadUrl;
+      try {
+        // Uji unduh stream menggunakan fetch untuk memastikan file berhasil digenerate backend tanpa error
+        const res = await fetch(finalDownloadUrl);
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || 'Gagal memproses link TikTok di server.');
+        }
 
-      // Berikan waktu tunggu 2 detik agar backend Railway sempat memproses yt-dlp, lalu tampilkan hasil
-      setTimeout(() => {
-        loader.style.display = 'none';
-        resultBox.style.display = 'flex';
-        btn.disabled = false;
-        videoPreview.load();
-      }, 2000);
-    }
-  </script>
-</body>
-</html>
+        // Set source video langsung ke blob/
