@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Judul yang mengandung kata kunci utama -->
+  <title>gilanglagu - Download Lagu MP3 & Musik Gratis Terlengkap</title>
+  
+  <!-- Deskripsi singkat yang akan muncul di hasil pencarian Google -->
+  <meta name="description" content="gilanglagu adalah platform gratis untuk download lagu MP3 dan musik YouTube terlengkap dengan cepat, mudah, dan kualitas audio terbaik.">
+  
+  <!-- Kata kunci (Keywords) -->
+  <meta name="keywords" content="gilanglagu, download lagu, download mp3, lagu gratis, musik mp3">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://gilanglagu.vercel.app/">
+  
+  <!-- Verification & Google indexing -->
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="W2E3q5waVX0g0QdGfOV417xXgCeHYQV3WHB625IvbKI" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    :root {
+      --primary: #10b981;
+      --primary-glow: rgba(16, 185, 129, 0.4);
+      --electric-blue: #38bdf8;
+      --neon-purple: #a855f7;
+      --neon-gold: #fbbf24;
+      --bg-dark: #0a0e17;
+      --card-bg: rgba(17, 24, 39, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    body {
+      background: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 50% 65%, rgba(16, 185, 129, 0.12) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* TOP ANNOUNCEMENT BANNER - SANGAT MENCOLOK */
+    .hero-signature-marquee {
+      background: linear-gradient(90deg, #7c3aed, #ec4899, #f59e0b, #10b981, #3b82f6, #7c3aed);
+      background-size: 300% 300%;
+      animation: gradientFlow 8s ease infinite;
+      padding: 1.1rem 1rem;
+      box-shadow: 0 4px 25px rgba(236, 72, 153, 0.45), 0 0 40px rgba(124, 58, 237, 0.35);
+      position: relative;
+      z-index: 60;
+      overflow: hidden;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .signature-badge-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0.8rem;
+    }
+
+    .signature-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.5);
+      line-height: 1.3;
+    }
+
+    .signature-tag {
+      background: #000000;
+      color: #fbbf24;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border: 1px solid rgba(251, 191, 36, 0.5);
+    }
+
+    /* HEADER */
+    header {
+      background: rgba(10, 14, 23, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .brand-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #38bdf8, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+    }
+
+    .brand-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .brand-title span {
+      background: linear-gradient(135deg, #38bdf8, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tabs {
+      display: flex;
+      background: rgba(30, 41, 59, 0.7);
+      padding: 0.35rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      gap: 0.3rem;
+    }
+
+    .tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.6rem 1.4rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border-radius: 999px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    main {
+      flex: 1;
+      max-width: 980px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* THEME HERO BANNER */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 1.75rem;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2.25rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      flex: 1;
+      z-index: 2;
+    }
+
+    .badge-welcome {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-title .brand-highlight {
+      background: linear-gradient(135deg, #38bdf8, #a855f7, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    /* VINYL & EQUALIZER VISUAL */
+    .hero-visual {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    .vinyl-disc {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #0b0f19 32%, #1e293b 33%, #0b0f19 50%, #334155 51%, #0b0f19 70%, #1e293b 71%, #0f172a 100%);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.35);
+      position: relative;
+      animation: spinVinyl 10s linear infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .vinyl-label {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ec4899, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+      border: 3px solid #0b0f19;
+    }
+
+    .equalizer-wave {
+      position: absolute;
+      bottom: -8px;
+      display: flex;
+      gap: 4px;
+      align-items: flex-end;
+      height: 32px;
+      z-index: 3;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 4px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+    }
+
+    .eq-bar {
+      width: 4px;
+      background: linear-gradient(to top, #38bdf8, #ec4899);
+      border-radius: 2px;
+      animation: bounceEq 1s ease-in-out infinite alternate;
+    }
+
+    .eq-bar:nth-child(1) { height: 10px; animation-delay: 0.1s; }
+    .eq-bar:nth-child(2) { height: 22px; animation-delay: 0.3s; }
+    .eq-bar:nth-child(3) { height: 28px; animation-delay: 0.15s; }
+    .eq-bar:nth-child(4) { height: 16px; animation-delay: 0.4s; }
+    .eq-bar:nth-child(5) { height: 26px; animation-delay: 0.25s; }
+    .eq-bar:nth-child(6) { height: 12px; animation-delay: 0.5s; }
+
+    @keyframes spinVinyl {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes bounceEq {
+      0% { height: 6px; }
+      100% { height: 28px; }
+    }
+
+    /* SEARCH + LARGE GUIDE NOTICE */
+    .search-guide-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 0;
+      min-width: 0;
+    }
+
+    .guide-notice {
+      width: 100%;
+      min-height: 45vh;
+      padding: clamp(2rem, 6vw, 5rem);
+      border: 3px solid rgba(251, 191, 36, 0.85);
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, rgba(120, 53, 15, 0.82), rgba(30, 41, 59, 0.98));
+      box-shadow: 0 0 35px rgba(251, 191, 36, 0.24);
+      color: #fff;
+      font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .guide-notice-title {
+      margin-bottom: 0.5rem;
+      color: #fcd34d;
+      font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: 0.025em;
+      text-shadow: 0 3px 18px rgba(251, 191, 36, 0.35);
+    }
+
+    .guide-notice p + p { margin-top: 0.5rem; }
+    .guide-notice strong { color: #fde68a; }
+    .guide-notice-warning { color: #fecaca; font-weight: 900; }
+
+    .search-box {
+      display: flex;
+      gap: 0.75rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      padding: 0.55rem;
+      border-radius: 1.25rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .search-box:focus-within {
+      border-color: #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+    }
+
+    .search-icon-inside {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+      color: #64748b;
+      font-size: 1.25rem;
+    }
+
+    .search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0.85rem 0.5rem;
+      color: #fff;
+      font-size: 1.05rem;
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: #64748b;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      border: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 0.9rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+      transition: all 0.25s ease;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* SONG LIST */
+    .song-list-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      padding: 0 0.5rem;
+    }
+
+    .song-list-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .song-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .song-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--card-border);
+      padding: 0.9rem 1.15rem;
+      border-radius: 1.2rem;
+      gap: 1.1rem;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .song-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+    }
+
+    .song-idx {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #64748b;
+      width: 26px;
+      text-align: center;
+    }
+
+    .thumb-wrapper {
+      position: relative;
+      width: 85px;
+      height: 60px;
+      border-radius: 0.65rem;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .song-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-play-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+      font-size: 1.2rem;
+    }
+
+    .song-card:hover .thumb-play-overlay {
+      opacity: 1;
+    }
+
+    .song-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .song-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #f1f5f9;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.35rem;
+    }
+
+    .song-meta {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .song-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .song-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .btn-play {
+      background: linear-gradient(135deg, #3b82f6, #6366f1);
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.15rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-play:hover {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      transform: translateY(-1px);
+    }
+
+    .btn-play.playing {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      border-radius: 0.75rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      transition: all 0.2s ease;
+    }
+
+    .btn-download:hover {
+      background: linear-gradient(135deg, #059669, #047857);
+      transform: translateY(-1px);
+    }
+
+    /* INLINE MUSIC PLAYER: tampil di dalam kartu lagu yang sedang diputar */
+    .player-bar {
+      position: static;
+      width: 100%;
+      flex: 0 0 100%;
+      order: 5;
+      background: rgba(10, 14, 23, 0.95);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 0.85rem 2rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      z-index: 100;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    .player-track {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 0;
+      max-width: 320px;
+    }
+
+    .player-thumb {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .player-info {
+      min-width: 0;
+    }
+
+    .player-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #f8fafc;
+    }
+
+    .player-artist {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .player-controls {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .player-audio-element {
+      width: 100%;
+      height: 36px;
+      outline: none;
+    }
+
+
+    /* TIKTOK CARD */
+    .tiktok-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    .tiktok-header {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .tiktok-thumb {
+      width: 95px;
+      height: 125px;
+      border-radius: 0.85rem;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tiktok-author {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+
+    .tiktok-desc {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .tiktok-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-tt-video {
+      background: linear-gradient(135deg, #ec4899, #db2777);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.85rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-tt-video:hover {
+      background: linear-gradient(135deg, #db2777, #be185d);
+      transform: translateY(-2px);
+    }
+
+    .btn-tt-audio {
+      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.85rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-tt-audio:hover {
+      background: linear-gradient(135deg, #7c3aed, #6d28d9);
+      transform: translateY(-2px);
+    }
+
+    /* STATES */
+    .loading-spinner {
+      display: none;
+      text-align: center;
+      margin: 3rem 0;
+      color: var(--text-muted);
+    }
+
+    .spinner-ring {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border: 4px solid rgba(56, 189, 248, 0.2);
+      border-top-color: #38bdf8;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .download-notice {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      z-index: 9999;
+      max-width: min(420px, calc(100vw - 2rem));
+      padding: 1rem 1.25rem;
+      border-radius: 0.9rem;
+      background: linear-gradient(135deg, #059669, #047857);
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.45;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      animation: downloadNoticeIn 0.25s ease-out;
+    }
+
+    @keyframes downloadNoticeIn {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .empty-state {
+      text-align: center;
+      color: #64748b;
+      margin: 3.5rem auto;
+      font-size: 1rem;
+      max-width: 420px;
+    }
+
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      opacity: 0.6;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem 5rem 1.5rem;
+      color: #64748b;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--card-border);
+      background: rgba(10, 14, 23, 0.9);
+      margin-top: auto;
+    }
+
+    .footer-tribute {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #ec4899, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 768px) {
+      .search-guide-row {
+        grid-template-columns: 1fr;
+      }
+      .guide-notice {
+        padding: 1rem 1.1rem;
+        font-size: 1rem;
+      }
+      .guide-notice-title {
+        font-size: 1.35rem;
+      }
+      .signature-text {
+        font-size: 1rem;
+      }
+      .signature-badge-wrap {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      header {
+        padding: 0.85rem 1rem;
+      }
+      .hero-banner {
+        flex-direction: column-reverse;
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+      }
+      .hero-desc {
+        margin: 0 auto;
+      }
+      .hero-visual {
+        width: 120px;
+        height: 120px;
+      }
+      .vinyl-disc {
+        width: 110px;
+        height: 110px;
+      }
+      .song-card {
+        flex-direction: row;
+        align-items: center;
+      }
+      .song-info {
+        flex: 1 1 calc(100% - 110px);
+      }
+      .song-actions {
+        flex: 0 0 100%;
+        order: 2;
+      }
+      .song-actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+      .btn-play, .btn-download {
+        flex: 1;
+        justify-content: center;
+      }
+      .song-idx {
+        display: none;
+      }
+      .player-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem;
+        border-radius: 0 0 1.2rem 1.2rem;
+      }
+      .player-track {
+        max-width: 100%;
+        width: 100%;
+      }
+      .player-controls {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <!-- BANNER TULISAN BESAR MENCOLOK -->
+  <div class="hero-signature-marquee">
+    <div class="signature-badge-wrap">
+      <span class="signature-tag">👑 OFFICIAL CREATOR</span>
+      <span class="signature-text">DIBUAT OLEH TUAN GILANGRANGGA DENGAN SUKA RELA DAN GRATIS</span>
+      <span class="signature-tag">⚡ 100% FREE NO ADS</span>
+    </div>
+  </div>
+
+  <header>
+    <a href="#" class="brand-logo">
+      <div class="brand-icon-box">🎧</div>
+      <div class="brand-title">gilang<span>ranggaid</span></div>
+    </a>
+    <div class="tabs">
+      <button class="tab-btn active" id="tabSongBtn" type="button">
+        <span>🎵 Cari Lagu MP3</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- THEME HERO BANNER -->
+    <div class="hero-banner">
+      <div class="hero-content">
+        <div class="badge-welcome">✨ Gilangrangga Music Downloader✨</div>
+        <h1 class="hero-title">
+          Portal Musik <span class="brand-highlight">gilangranggaid</span> <style>
+/* Animasi 1: Untuk Server Gilang */
+@keyframes blinkGlow {
+  0%, 100% { color: #facc15; text-shadow: 0 0 8px #facc15; }
+  33% { color: #3b82f6; text-shadow: 0 0 8px #3b82f6; }
+  66% { color: #22c55e; text-shadow: 0 0 8px #22c55e; }
+}
+
+/* Animasi 2: Untuk I Love You */
+@keyframes loveGlow {
+  0%, 100% { color: #ef4444; text-shadow: 0 0 10px #ef4444; } /* Merah */
+  33%      { color: #ec4899; text-shadow: 0 0 10px #ec4899; } /* Pink */
+  66%      { color: #facc15; text-shadow: 0 0 10px #facc15; } /* Kuning */
+}
+</style>
+  <p class="hero-desc" style="font-size: 1.2rem; font-weight: 700; animation: blinkGlow 1.5s infinite ease-in-out;">
+    ✨Cari judul lagu apa aja ada Server GILANGRANGGA mah Bebas😎😎✨
+  </p>
+</div>
+
+      <div class="hero-visual">
+        <div class="vinyl-disc">
+          <div class="vinyl-label">🎶</div>
+        </div>
+        <div class="equalizer-wave">
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+          <div class="eq-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 1: VIEW LAGU -->
+    <div id="viewSong">
+      <div class="search-guide-row">
+        <div class="search-wrapper">
+          <div class="search-box">
+            <div class="search-icon-inside">🔍</div>
+            <input 
+              type="text" 
+              id="songQuery" 
+              class="search-input" 
+              placeholder="Ketik judul lagu atau nama artis (cth: artis gilangrangga😅atau lagu astrid_mendua_breakbeat)..." 
+              onkeypress="if(event.key==='Enter') searchSongs()"
+            >
+            <button class="btn-submit" id="btnSearch" onclick="searchSongs()">
+              <span>Cari Lagu</span>
+            </button>
+          </div>
+        </div>
+       <aside>
+  <p class="guide-notice-title" style="font-size: 1.2rem; font-weight: 700; text-align: center; animation: loveGlow 1.2s infinite ease-in-out;">
+    ❤️ ❤️ ❤️ I LOVE YOU ❤️ ❤️ ❤️
+  </p>
+</aside>
+      </div>
+
+      <div class="loading-spinner" id="songLoading">
+        <div class="spinner-ring"></div>
+        <p>Gilangrangga sedang mencari lagu terbaik untukmu... ⏳</p>
+      </div>
+
+      <div class="song-list-header" id="songListHeader" style="display: none;">
+        <div class="song-list-title">
+          <span>🎧 10 Hasil Lagu Ditemukan</span>
+</div>
+<span style="font-size: 1rem; color: #facc15; font-weight: 600;">
+  WAJIB <span style="color: #3b82f6;">PUTAR</span> LAGU DULU Baru langsung <span style="color: #22c55e;">unduh MP3</span>
+</span>
+</div>
+
+      <div class="song-list" id="songResults"></div>
+      
+      <div class="empty-state" id="songEmpty">
+        <div class="empty-icon">🎼</div>
+        <p>Belum ada pencarian. Ketik judul lagu favoritmu di atas untuk menampilkan 10 rekomendasi lagu!</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FLOATING MUSIC PLAYER -->
+  <div class="player-bar" id="playerBar">
+    <div class="player-track">
+      <img id="playerThumb" class="player-thumb" src="" alt="Cover">
+      <div class="player-info">
+        <div id="playerTitle" class="player-title">-</div>
+        <div id="playerArtist" class="player-artist">-</div>
+      </div>
+    </div>
+    <div class="player-controls">
+      <audio id="audioPlayer" class="player-audio-element" controls preload="none"></audio>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-tribute">DIBUAT OLEH TUAN GILANGRANGGA DENGAN SUKA RELA DAN GRATIS</div>
+    <p>&copy; 2026 gilangranggaid &bull; Cepat, Jernih, Satset & Tanpa Iklan</p>
+  </footer>
+
+ <script>
+    // Konfigurasi endpoint backend (Menggunakan proxy Vercel rewrite)
+    const BACKEND_URL = '';
+
+    function api(path) {
+      return (BACKEND_URL ? BACKEND_URL : '') + path;
+    }
+
+    let currentPlayingUrl = null;
+
+    function downloadMp3(url, title, duration) {
+      const downloadUrl = `${api('/api/download/song')}?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+      const durationText = String(duration || '');
+      const match = durationText.match(/(?:(\d+):)?(\d+):(\d+)/);
+      const durationSeconds = match ? Number(match[1] || 0) * 3600 + Number(match[2]) * 60 + Number(match[3]) : 0;
+      const longSongNote = durationSeconds > 40 * 60 ? ' Lagu lebih dari 40 menit mungkin memerlukan sekitar 1 menit.' : '';
+
+      // Tampilkan notifikasi non-blocking, lalu mulai unduhan tanpa menunggu input pengguna.
+      const oldNotice = document.getElementById('downloadNotice');
+      if (oldNotice) oldNotice.remove();
+      const notice = document.createElement('div');
+      notice.id = 'downloadNotice';
+      notice.className = 'download-notice';
+      notice.setAttribute('role', 'status');
+      notice.setAttribute('aria-live', 'polite');
+      notice.textContent = 'GILANGRANG😘😘😘.' + longSongNote;
+      document.body.appendChild(notice);
+      window.setTimeout(() => notice.remove(), 6000);
+
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = `${title || 'lagu'}.mp3`;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+    function togglePlay(url, title, author, thumb, btnId) {
+      const audio = document.getElementById('audioPlayer');
+      const bar = document.getElementById('playerBar');
+      const btn = document.getElementById(btnId);
+      const songCard = btn.closest('.song-card');
+
+      // Reset all other play buttons
+      document.querySelectorAll('.btn-play').forEach(b => {
+        b.innerHTML = '<span>▶️ Putar</span>';
+        b.classList.remove('playing');
+      });
+
+      if (currentPlayingUrl === url && !audio.paused) {
+        audio.pause();
+        currentPlayingUrl = null;
+        return;
+      }
+
+      currentPlayingUrl = url;
+      // Notifikasi non-blocking agar playback tetap dimulai langsung dari klik pengguna.
+      const oldNotice = document.getElementById('downloadNotice');
+      if (oldNotice) oldNotice.remove();
+      const notice = document.createElement('div');
+      notice.id = 'downloadNotice';
+      notice.className = 'download-notice';
+      notice.setAttribute('role', 'status');
+      notice.setAttribute('aria-live', 'polite');
+      notice.textContent = 'GILANGRANGGA SEDANG MEMUTAR LAGU , SANTAI AJA TUNGGU YA 😘 🎶🎧';
+      document.body.appendChild(notice);
+      window.setTimeout(() => notice.remove(), 6000);
+
+      // Pindahkan panel audio ke bagian bawah tombol Putar/Unduh pada kartu lagu aktif.
+      songCard.appendChild(bar);
+      bar.style.display = 'flex';
+      document.getElementById('playerTitle').textContent = title;
+      document.getElementById('playerArtist').textContent = author;
+      document.getElementById('playerThumb').src = thumb;
+
+
+      audio.pause();
+      audio.src = `${api('/api/play/song')}?url=${encodeURIComponent(url)}`;
+      audio.load();
+      audio.play().catch(e => {
+        console.log('Play info:', e);
+      });
+
+      btn.innerHTML = '<span>⏸️ Stop</span>';
+      btn.classList.add('playing');
+
+      audio.onended = () => {
+        btn.innerHTML = '<span>▶️ Putar</span>';
+        btn.classList.remove('playing');
+        currentPlayingUrl = null;
+      };
+
+      audio.onpause = () => {
+        btn.innerHTML = '<span>▶️ Putar</span>';
+        btn.classList.remove('playing');
+      };
+
+      audio.onplay = () => {
+        btn.innerHTML = '<span>⏸️ Stop</span>';
+        btn.classList.add('playing');
+      };
+    }
+
+    function showGuide() {
+      alert('PANDUAN DOWNLOAD MP3\n\n1. Cari lagu yang kamu inginkan.\n2. Tekan tombol Putar dan pastikan preview lagunya bisa diputar sampai keluar suara.\n3. Kalau lagu bisa diputar, tekan tombol Download MP3 pada lagu tersebut.');
+    }
+
+    async function searchSongs() {
+      const q = document.getElementById('songQuery').value.trim();
+      if (!q) return alert('Silakan ketik judul lagu terlebih dahulu!');
+
+      const btn = document.getElementById('btnSearch');
+      const loader = document.getElementById('songLoading');
+      const list = document.getElementById('songResults');
+      const header = document.getElementById('songListHeader');
+      const empty = document.getElementById('songEmpty');
+
+      btn.disabled = true;
+      loader.style.display = 'block';
+      list.innerHTML = '';
+      header.style.display = 'none';
+      empty.style.display = 'none';
+
+      try {
+        const res = await fetch(api(`/api/search?q=${encodeURIComponent(q)}`));
+        const json = await res.json();
+
+        if (json.success && json.data.length > 0) {
+          header.style.display = 'flex';
+          list.innerHTML = json.data.map((item, index) => {
+            const btnId = `btnPlay_${index}`;
+            const safeTitle = item.title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            const safeAuthor = item.author.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+            return `
+            <div class="song-card">
+              <div class="song-idx">${index + 1}</div>
+              <div class="thumb-wrapper">
+                <img class="song-thumb" src="${item.thumbnail}" alt="Cover">
+                <div class="thumb-play-overlay">🎵</div>
+              </div>
+              <div class="song-info">
+                <div class="song-title" title="${item.title}">${item.title}</div>
+                <div class="song-meta">
+                  <span>⏱️ ${item.duration}</span>
+                  <span>👤 ${item.author}</span>
+                  <span>👁️ ${item.views}</span>
+                </div>
+              </div>
+              <div class="song-actions">
+                <button class="btn-play" id="${btnId}" onclick="togglePlay('${item.url}', '${safeTitle}', '${safeAuthor}', '${item.thumbnail}', '${btnId}')">
+                  <span>▶️ Putar</span>
+                </button>
+                <button class="btn-download" onclick="downloadMp3('${item.url}', '${safeTitle}', '${item.duration}')">
+                  <span>⬇️ Unduh MP3</span>
+                </button>
+              </div>
+            </div>
+          `;
+          }).join('');
+        } else {
+          empty.innerHTML = `
+            <div class="empty-icon">❌</div>
+            <p>Tidak ada hasil lagu yang ditemukan untuk "${q}". Coba kata kunci lain!</p>
+          `;
+          empty.style.display = 'block';
+        }
+      } catch (err) {
+        alert('Gagal mengambil data lagu: ' + err.message);
+      } finally {
+        btn.disabled = false;
+        loader.style.display = 'none';
+      }
+    }
+
+  </script>
+</body>
+</html>
