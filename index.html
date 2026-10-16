@@ -56,6 +56,7 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+      padding-bottom: 90px;
     }
 
     /* TOP ANNOUNCEMENT BANNER - SANGAT MENCOLOK */
@@ -618,12 +619,12 @@
       transform: translateY(-1px);
     }
 
-    /* INLINE MUSIC PLAYER: tampil di dalam kartu lagu yang sedang diputar */
+    /* FLOATING MUSIC PLAYER: tetap di bawah layar secara permanen */
     .player-bar {
-      position: static;
+      position: fixed;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      flex: 0 0 100%;
-      order: 5;
       background: rgba(10, 14, 23, 0.95);
       backdrop-filter: blur(20px);
       border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -682,7 +683,6 @@
       height: 36px;
       outline: none;
     }
-
 
     /* TIKTOK CARD */
     .tiktok-card {
@@ -898,8 +898,6 @@
       .song-actions {
         flex: 0 0 100%;
         order: 2;
-      }
-      .song-actions {
         width: 100%;
         justify-content: stretch;
       }
@@ -914,7 +912,6 @@
         flex-direction: column;
         gap: 0.75rem;
         padding: 1rem;
-        border-radius: 0 0 1.2rem 1.2rem;
       }
       .player-track {
         max-width: 100%;
@@ -928,7 +925,6 @@
   </style>
 </head>
 <body>
-  
 
   <!-- BANNER TULISAN BESAR MENCOLOK -->
   <div class="hero-signature-marquee">
@@ -957,25 +953,24 @@
       <div class="hero-content">
         <div class="badge-welcome">✨ Gilangrangga Music Downloader✨</div>
         <h1 class="hero-title">
-          Portal Musik <span class="brand-highlight">gilangranggaid</span> <style>
-/* Animasi 1: Untuk Server Gilang */
-@keyframes blinkGlow {
-  0%, 100% { color: #facc15; text-shadow: 0 0 8px #facc15; }
-  33% { color: #3b82f6; text-shadow: 0 0 8px #3b82f6; }
-  66% { color: #22c55e; text-shadow: 0 0 8px #22c55e; }
-}
-
-/* Animasi 2: Untuk I Love You */
-@keyframes loveGlow {
-  0%, 100% { color: #ef4444; text-shadow: 0 0 10px #ef4444; } /* Merah */
-  33%      { color: #ec4899; text-shadow: 0 0 10px #ec4899; } /* Pink */
-  66%      { color: #facc15; text-shadow: 0 0 10px #facc15; } /* Kuning */
-}
-</style>
-  <p class="hero-desc" style="font-size: 1.2rem; font-weight: 700; animation: blinkGlow 1.5s infinite ease-in-out;">
-    ✨❤️🧡💛💚💙💜🤎🖤🤍💖 ~CARI LAGU APA AJA ADA DISINI~ ❤️🧡💛💚💙💜🤎🖤🤍💖✨  ~~😎 SERVER GILANGRANGGA MAH BEBAS 😎~~
-  </p>
-</div>
+          Portal Musik <span class="brand-highlight">gilangranggaid</span>
+        </h1>
+        <style>
+          @keyframes blinkGlow {
+            0%, 100% { color: #facc15; text-shadow: 0 0 8px #facc15; }
+            33% { color: #3b82f6; text-shadow: 0 0 8px #3b82f6; }
+            66% { color: #22c55e; text-shadow: 0 0 8px #22c55e; }
+          }
+          @keyframes loveGlow {
+            0%, 100% { color: #ef4444; text-shadow: 0 0 10px #ef4444; }
+            33%      { color: #ec4899; text-shadow: 0 0 10px #ec4899; }
+            66%      { color: #facc15; text-shadow: 0 0 10px #facc15; }
+          }
+        </style>
+        <p class="hero-desc" style="font-size: 1.2rem; font-weight: 700; animation: blinkGlow 1.5s infinite ease-in-out;">
+          ✨❤️🧡💛💚💙💜🤎🖤🤍💖 ~CARI LAGU APA AJA ADA DISINI~ ❤️🧡💛💚💙💜🤎🖤🤍💖✨  ~~😎 SERVER GILANGRANGGA MAH BEBAS 😎~~
+        </p>
+      </div>
 
       <div class="hero-visual">
         <div class="vinyl-disc">
@@ -1010,11 +1005,11 @@
             </button>
           </div>
         </div>
-       <aside>
-  <p class="guide-notice-title" style="font-size: 1.2rem; font-weight: 700; text-align: center; animation: loveGlow 1.2s infinite ease-in-out;">
-    💛 💜 💖 I LOVE YOU 💛 💜 💖 
-  </p>
-</aside>
+        <aside>
+          <p class="guide-notice-title" style="font-size: 1.2rem; font-weight: 700; text-align: center; animation: loveGlow 1.2s infinite ease-in-out;">
+            💛 💜 💖 I LOVE YOU 💛 💜 💖 
+          </p>
+        </aside>
       </div>
 
       <div class="loading-spinner" id="songLoading">
@@ -1025,11 +1020,11 @@
       <div class="song-list-header" id="songListHeader" style="display: none;">
         <div class="song-list-title">
           <span>🎧 10 Hasil Lagu Ditemukan</span>
-</div>
-<span style="font-size: 1rem; color: #facc15; font-weight: 600;">
-  WAJIB <span style="color: #3b82f6;">PUTAR</span> LAGU DULU Baru langsung <span style="color: #22c55e;">unduh MP3</span>
-</span>
-</div>
+        </div>
+        <span style="font-size: 1rem; color: #facc15; font-weight: 600;">
+          WAJIB <span style="color: #3b82f6;">PUTAR</span> LAGU DULU Baru langsung <span style="color: #22c55e;">unduh MP3</span>
+        </span>
+      </div>
 
       <div class="song-list" id="songResults"></div>
       
@@ -1053,7 +1048,6 @@
     <div class="player-controls">
       <audio id="audioPlayer" class="player-audio-element" controls preload="none"></audio>
     </div>
-
   </div>
 
   <footer>
@@ -1061,8 +1055,7 @@
     <p>&copy; 2026 gilangranggaid &bull; Cepat, Jernih, Satset & Tanpa Iklan</p>
   </footer>
 
- <script>
-    // Konfigurasi endpoint backend (Menggunakan proxy Vercel rewrite)
+  <script>
     const BACKEND_URL = '';
 
     function api(path) {
@@ -1078,7 +1071,6 @@
       const durationSeconds = match ? Number(match[1] || 0) * 3600 + Number(match[2]) * 60 + Number(match[3]) : 0;
       const longSongNote = durationSeconds > 40 * 60 ? ' Lagu lebih dari 40 menit mungkin memerlukan sekitar 1 menit.' : '';
 
-      // Tampilkan notifikasi non-blocking, lalu mulai unduhan tanpa menunggu input pengguna.
       const oldNotice = document.getElementById('downloadNotice');
       if (oldNotice) oldNotice.remove();
       const notice = document.createElement('div');
@@ -1103,7 +1095,6 @@
       const audio = document.getElementById('audioPlayer');
       const bar = document.getElementById('playerBar');
       const btn = document.getElementById(btnId);
-      const songCard = btn.closest('.song-card');
 
       // Reset all other play buttons
       document.querySelectorAll('.btn-play').forEach(b => {
@@ -1114,11 +1105,11 @@
       if (currentPlayingUrl === url && !audio.paused) {
         audio.pause();
         currentPlayingUrl = null;
+        bar.style.display = 'none';
         return;
       }
 
       currentPlayingUrl = url;
-      // Notifikasi non-blocking agar playback tetap dimulai langsung dari klik pengguna.
       const oldNotice = document.getElementById('downloadNotice');
       if (oldNotice) oldNotice.remove();
       const notice = document.createElement('div');
@@ -1130,13 +1121,11 @@
       document.body.appendChild(notice);
       window.setTimeout(() => notice.remove(), 6000);
 
-      // Pindahkan panel audio ke bagian bawah tombol Putar/Unduh pada kartu lagu aktif.
-      songCard.appendChild(bar);
+      // Tampilkan player di bawah layar secara permanen
       bar.style.display = 'flex';
       document.getElementById('playerTitle').textContent = title;
       document.getElementById('playerArtist').textContent = author;
       document.getElementById('playerThumb').src = thumb;
-
 
       audio.pause();
       audio.src = `${api('/api/play/song')}?url=${encodeURIComponent(url)}`;
@@ -1152,6 +1141,7 @@
         btn.innerHTML = '<span>▶️ Putar</span>';
         btn.classList.remove('playing');
         currentPlayingUrl = null;
+        bar.style.display = 'none';
       };
 
       audio.onpause = () => {
@@ -1235,7 +1225,6 @@
         loader.style.display = 'none';
       }
     }
-
   </script>
 </body>
 </html>
